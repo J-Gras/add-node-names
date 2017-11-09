@@ -1,0 +1,20 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	conn
+#open	2017-11-09-17-06-30
+#fields	_node_name	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	service	duration	orig_bytes	resp_bytes	conn_state	local_orig	local_resp	missed_bytes	history	orig_pkts	orig_ip_bytes	resp_pkts	resp_ip_bytes	tunnel_parents
+#types	string	time	string	addr	port	addr	port	enum	string	interval	count	count	string	bool	bool	count	string	count	count	count	count	set[string]
+worker-1	1510247185.323415	CHhAvVGS1DHFjwGM9	141.42.64.125	56729	125.190.109.199	12345	tcp	-	0.182433	0	0	REJ	-	-	0	Sr	1	60	1	40	(empty)
+#close	2017-11-09-17-06-32
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	reporter
+#open	2017-11-09-17-06-32
+#fields	ts	level	message	location
+#types	time	enum	string	string
+0.000000	Reporter::INFO	received termination signal	(empty)
+#close	2017-11-09-17-06-32

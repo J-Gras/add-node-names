@@ -1,0 +1,51 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	conn
+#open	2017-11-09-17-09-35
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	service	duration	orig_bytes	resp_bytes	conn_state	local_orig	local_resp	missed_bytes	history	orig_pkts	orig_ip_bytes	resp_pkts	resp_ip_bytes	tunnel_parents
+#types	time	string	addr	port	addr	port	enum	string	interval	count	count	string	bool	bool	count	string	count	count	count	count	set[string]
+1128727430.350788	CHhAvVGS1DHFjwGM9	141.42.64.125	56729	125.190.109.199	12345	tcp	-	0.182433	0	0	REJ	-	-	0	Sr	1	60	1	40	(empty)
+1128727435.450898	ClEkJM2Vm5giqnMf4h	141.42.64.125	56730	125.190.109.199	80	tcp	http	1.733303	98	9417	SF	-	-	0	ShADdFaf	12	730	10	9945	(empty)
+#close	2017-11-09-17-09-35
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	files
+#open	2017-11-09-17-09-35
+#fields	ts	fuid	tx_hosts	rx_hosts	conn_uids	source	depth	analyzers	mime_type	filename	duration	local_orig	is_orig	seen_bytes	total_bytes	missing_bytes	overflow_bytes	timedout	parent_fuid	md5	sha1	sha256	extracted	extracted_cutoff	extracted_size
+#types	time	string	set[addr]	set[addr]	set[string]	string	count	set[string]	string	string	interval	bool	bool	count	count	count	count	bool	string	string	string	string	string	bool	count
+1128727435.818229	FeROJU1d4zWQw8htcd	125.190.109.199	141.42.64.125	ClEkJM2Vm5giqnMf4h	HTTP	0	(empty)	text/html	-	0.368307	-	F	9130	9130	0	0	F	-	-	-	-	-	-	-
+#close	2017-11-09-17-09-35
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	http
+#open	2017-11-09-17-09-35
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	trans_depth	method	host	uri	referrer	version	user_agent	request_body_len	response_body_len	status_code	status_msg	info_code	info_msg	tags	username	password	proxied	orig_fuids	orig_filenames	orig_mime_types	resp_fuids	resp_filenames	resp_mime_types
+#types	time	string	addr	port	addr	port	count	string	string	string	string	string	string	count	count	count	string	count	string	set[enum]	string	string	set[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]
+1128727435.634189	ClEkJM2Vm5giqnMf4h	141.42.64.125	56730	125.190.109.199	80	1	GET	www.icir.org	/	-	1.1	Wget/1.10	0	9130	200	OK	-	-	(empty)	-	-	-	-	-	-	FeROJU1d4zWQw8htcd	-	text/html
+#close	2017-11-09-17-09-35
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	packet_filter
+#open	2017-11-09-17-09-35
+#fields	ts	node	filter	init	success
+#types	time	string	string	bool	bool
+1510247375.880195	bro	ip or not ip	T	T
+#close	2017-11-09-17-09-35
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	reporter
+#open	2017-11-09-17-09-35
+#fields	ts	level	message	location
+#types	time	enum	string	string
+0.000000	Reporter::WARNING	Node names are not added to logs (not in cluster mode)!	./../../../scripts/./add-node-names.bro, line 43
+#close	2017-11-09-17-09-35
