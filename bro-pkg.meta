@@ -1,0 +1,6 @@
+[package]
+description = Adds cluster node name to logs.
+tags = log, logging, conn, add node name, add worker
+script_dir = scripts
+depends =
+	bro >=2.5
