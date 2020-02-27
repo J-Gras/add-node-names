@@ -22,7 +22,7 @@ function node_name_ext_func(path: string): AddedFields
 	return AddedFields($node_name = Cluster::node);
 	}
 
-event bro_init() &priority=-3
+event zeek_init() &priority=-3
 	{
 	# Add ext_func to log streams
 	for ( id in Log::active_streams )
@@ -38,7 +38,7 @@ event bro_init() &priority=-3
 
 @else
 
-event bro_init()
+event zeek_init()
 	{
 	Reporter::warning("Node names are not added to logs (not in cluster mode)!");
 	}
